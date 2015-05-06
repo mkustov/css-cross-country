@@ -31,54 +31,58 @@ Sometimes clearing is necessary. Floated items can be taller than non-floated co
 1.Clear with a subsequent element: Requires sequence to stay intact - breaks if things move; Background / border do not extend. 
 
 ```html
-    <div>
-     <img src="ski.jpg" alt="Skiing!" />
-     <p>To successfully ski, simply do not fall.</p>
-    </div> 
-    <div class="intro">
-      <p>Whee!</p>
-    </div>
+<div>
+  <img src="ski.jpg" alt="Skiing!" />
+  <p>To successfully ski, simply do not fall.</p>
+</div> 
+<div class="intro">
+  <p>Whee!</p>
+</div>
 ```
 ```css
-    img {
-      float: left;
-    }
-    .intro {
-      clear: both;
-    }
+img {
+  float: left;
+}
+.intro {
+  clear: both;
+}
 ```
 
 2.Manual clearing: Requires an empty element; Might not be necessary later. 
 
 ```html
-    <div>
-     <img src="ski.jpg" alt="Skiing!" />
-     <p>To successfully ski, simply do not fall.</p>
-     <div class="clear"></div>
-    </div>
+<div>
+  <img src="ski.jpg" alt="Skiing!" />
+  <p>To successfully ski, simply do not fall.</p>
+  <div class="clear"></div>
+</div>
 ```
 
 ```css
-    .clear {
-     clear: both;
-    }
+.clear {
+  clear: both;
+}
 ```
 
 3.The clearfix. 
 
 ```html    
-    <div class="group">
-     <img src="ski.jpg" alt="Skiing!" />
-     <p>To successfully ski, simply do not fall.</p>
-    </div>
+<div class="group">
+  <img src="ski.jpg" alt="Skiing!" />
+  <p>To successfully ski, simply do not fall.</p>
+</div>
 ```
 ```css
-    .group:before, .group:after { content: "";
-      display: table; }
-    .group :after {
-      clear: both; }
-    .group {
-      zoom: 1; /* IE6&7 */ }
+.group:before, .group:after {
+  content: "";
+  display: table;
+}
+.group :after {
+  clear: both;
+}
+.group {
+  zoom: 1; /* IE6&7 */
+}
 ```
 
 ##### Challenge
@@ -89,22 +93,22 @@ By default nested elements automatically inherit parent styles, but sometimes we
 
 ######0,0,0,1
 ```css
-    p { color: #fff; }
+p { color: #fff; }
 ```
 
 ######0,0,1,0
 ```css
-    .intro { color: #98c7d4; }
+.intro { color: #98c7d4; }
 ```
 
 ######0,1,0,0
 ```css
-    #header { color: #444245; }
+#header { color: #444245; }
 ```
 
 ######1,0,0,0
 ```html
-    <h1 style="color: #000;">Mogul</h1>
+<h1 style="color: #000;">Mogul</h1>
 ```
 
 ##### Challenge
@@ -131,12 +135,12 @@ Total calculated box width = content width + padding width + border width;
 
 ex.: 100px content width + 15px padding width + 10px border width = 125px box width
 ```css
-    .downhill {
-        border: 5px solid #fff;
-        padding-left: 10px;
-        padding-right: 5px;
-        width: 100px;
-    }
+.downhill {
+  border: 5px solid #fff;
+  padding-left: 10px;
+  padding-right: 5px;
+  width: 100px;
+}
 ```
 ##### Challenge
 The `<figure>` in our page footer should have a total box `width` of `120px`. Add an appropriate content `width` given its base `padding` and `border`.
@@ -171,7 +175,7 @@ In IT world DRY is an acronym for Don't Repeat Yourself. when we're talking abou
 
 ```html
 <body>
-    <div class="container">
+  <div class="container">
     <h1>Sven's Snowshoe Superstore</h1>
     <p>Our snowshoes are so stylish!</p>
     <a class="sale" href="/sale">View our sales</a>
@@ -180,28 +184,28 @@ In IT world DRY is an acronym for Don't Repeat Yourself. when we're talking abou
 ```
 ##### NOT-DRY WAY
 ```css
-    h1 {
-      font-family: Arial, sans-serif; 
-    }
-    p {
-      font-family: Arial, sans-serif;
-    }
-    .sale {
-      font-family: Arial, sans-serif;
-    }
+h1 {
+  font-family: Arial, sans-serif; 
+}
+p {
+  font-family: Arial, sans-serif;
+}
+.sale {
+  font-family: Arial, sans-serif;
+}
 ```
 ##### DRY
 ###### Selector combination:
 ```css
-    h1, p, .sale {
-      font-family: Arial, sans-serif; 
-    }
+h1, p, .sale {
+  font-family: Arial, sans-serif; 
+}
 ```
 ###### Target parent element:
 ```css
-    .container {
-      font-family: Arial, sans-serif; 
-    }
+.container {
+  font-family: Arial, sans-serif; 
+}
 ```
 
 ##### Challenge
@@ -232,33 +236,33 @@ Give the unordered list in `<nav>` a `width` of `250px` and `center` it `horizon
 #### Collapsing Margins
 Margin properties specify the width of the margin area of a box. In a page with 3 main areas (header, article and aside), where your layout requests a margin of 20px between them, you could end up with something like:
 ```html
-  <header>
-  </header>
-  <article>
-  </article>
-  <aside>
-  </aside>
+<header>
+</header>
+<article>
+</article>
+<aside>
+</aside>
 ```
 
 ```css
-  article {
-    margin: 20px 0; 
-  }
+article {
+  margin: 20px 0; 
+}
 ```
 Now think about a layout change, we want to remove the article, leaving header and aside with a 20px margin between them... it shouldn't work now? Is it? A proper way to do that will be think about them as complementary blocks with a first margin added to the second with a total of 20px... **BUT THIS IS WRONG - in most cases*.
 
 According to w3c spec, two adjoining margins will be collapse and the highest value of them will be the final margin between those blocks. For example, with the following style definition the margin between header and article should be 20px and between article and aside will be 30px.
 
 ```css
-  header {
-    margin: 20px 0; 
-  }
-  article {
-    margin: 10px 0;
-  }
-  aside {
-    margin: 30px 0;
-  }
+header {
+  margin: 20px 0; 
+}
+article {
+  margin: 10px 0;
+}
+aside {
+  margin: 30px 0;
+}
 ```
 ##### Challenge
 Refactor the spacing between `<header>`, `<article>`, and `<aside>` so that elements will have a `20px` margin above and below, regardless of their order on the page. Account for collapsing margins and use shorthand syntax.
@@ -285,24 +289,24 @@ In every layout you start is important to differ between layout or content image
 
 ##### WORST FOR CONTENT
 ```html
-  <h4>Rental Products</h4>
-  <ul>
-    <li class="snowmobile"></li>
-  </ul>
+<h4>Rental Products</h4>
+<ul>
+  <li class="snowmobile"></li>
+</ul>
 ```
 ```css
-  .snowmobile li {
-    background: url(snowmobile.jpg); height: 300px;
-    width: 400px;
-  }
+.snowmobile li {
+  background: url(snowmobile.jpg); height: 300px;
+  width: 400px;
+}
 ```
 
 ##### BEST FOR CONTENT
 ```html
-  <h4>Rental Products</h4>
-  <ul>
-    <li><img src="snowmobile.jpg" alt="Snowmobile" /></li>
-  </ul>
+<h4>Rental Products</h4>
+<ul>
+  <li><img src="snowmobile.jpg" alt="Snowmobile" /></li>
+</ul>
 ```
 
 ##### Challenge
@@ -313,18 +317,18 @@ For layout images, you should consider to use `background` some element instead 
 
 ##### WORST FOR LAYOUT
 ```html
-  <h1>Feel the rhythm, feel the rhyme, get on up, it’s bobsled time!</h1>
-  <img src="divider.jpg" alt="Divider" />
+<h1>Feel the rhythm, feel the rhyme, get on up, it’s bobsled time!</h1>
+<img src="divider.jpg" alt="Divider" />
 ```
 
 ##### BEST FOR LAYOUT
 ```html
-  <h1>Feel the rhythm, feel the rhyme, get on up, it’s bobsled time!</h1>
+<h1>Feel the rhythm, feel the rhyme, get on up, it’s bobsled time!</h1>
 ```
 ```css
-  h1 {
-    background: url(divider.jpg); margin-bottom: 10px; padding-bottom: 10px;
-  }
+h1 {
+  background: url(divider.jpg); margin-bottom: 10px; padding-bottom: 10px;
+}
 ```
 
 ##### Challenge
@@ -335,32 +339,32 @@ Sometimes we'll need to present imagens among our content. Probably they will be
 
 ##### WRONG WAY
 ```html
-  <h4>Rental Products</h4> 
-  <ul class="rental">
-    <li><img src="snowboard.jpg" alt="Snowboard" /></li>
-  </ul>
+<h4>Rental Products</h4> 
+<ul class="rental">
+  <li><img src="snowboard.jpg" alt="Snowboard" /></li>
+</ul>
 ```
 ```css 
-  .rental img {
-    height: 300px;
-    width: 400px; 
-  }
+.rental img {
+  height: 300px;
+  width: 400px; 
+}
 ```
 ##### WRIGHT WAY
 ```html
-  <h4>Rental Products</h4> 
-  <ul class="rental">
-    <li class="crop">
-      <img src="snowboard.jpg" alt="Snowboard" />
-    </li>
-  </ul>
+<h4>Rental Products</h4> 
+<ul class="rental">
+  <li class="crop">
+    <img src="snowboard.jpg" alt="Snowboard" />
+  </li>
+</ul>
 ```
 ```css 
-  .crop {
-    height: 300px;
-    width: 400px; 
-    overflow: hidden;
-  }
+.crop {
+  height: 300px;
+  width: 400px; 
+  overflow: hidden;
+}
 ```
 
 
@@ -371,23 +375,23 @@ Images are currently being non-proportionally resized via CSS. Apply the `height
 To proportionaly crop image, you should choose one of the containers size to be equal (`width` or `height`) and use the other as auto.
 
 ```html
-  <h4>Rental Products</h4> 
-  <ul class="rental">
-    <li class="crop">
-      <img src="snowboard.jpg" alt="Snowboard" />
-    </li>
-  </ul>
+<h4>Rental Products</h4> 
+<ul class="rental">
+  <li class="crop">
+    <img src="snowboard.jpg" alt="Snowboard" />
+  </li>
+</ul>
 ```
 ```css 
-  .crop {
-    height: 300px;
-    width: 400px; 
-    overflow: hidden;
-  }
-  .crop img {
-    height: 300px;
-    width: auto;
-  }
+.crop {
+  height: 300px;
+  width: 400px; 
+  overflow: hidden;
+}
+.crop img {
+  height: 300px;
+  width: auto;
+}
 ```
 
 ##### Challenge
@@ -408,13 +412,13 @@ Sometimes we need to replace by images some elements like logos, that normally c
   <a href="#" class="logo">Sven's Snowshoe Emporium</a>
 ```
 ```css
-  .logo {
-    background: url(logo.png);
-    display: block;
-    height: 100px;
-    width: 200px;
-    text-ident: -9999px;
-  }
+.logo {
+  background: url(logo.png);
+  display: block;
+  height: 100px;
+  width: 200px;
+  text-ident: -9999px;
+}
 ```
 
 ##### Challenge
@@ -424,20 +428,20 @@ The anchor in `<h1>` is now replaced with a background image, but there's no fal
 In a lot of cases we'll spend sometime working at transitions. To avoid tons of HTTP requests, also the need of preloading strategies, we could work with sprite images. For that:
 
 ```html
-  <a href="#" class="logo">Sven's Snowshoe Emporium</a>
+<a href="#" class="logo">Sven's Snowshoe Emporium</a>
 ```
 
 ```css
-  .logo {
-     background: url(logo.png);
-     display: block;
-     height: 100px;
-     width: 200px;
-     text-indent: -9999px;
-   }
-  .logo:hover, .logo:focus {
-     background-position: 0 -100px;
-  }
+.logo {
+  background: url(logo.png);
+  display: block;
+  height: 100px;
+  width: 200px;
+  text-indent: -9999px;
+}
+.logo:hover, .logo:focus {
+  background-position: 0 -100px;
+}
 ```
 
 ##### Challenge
@@ -466,36 +470,36 @@ In old days, we could finish with a manual set class into the last element, so w
 
 ##### OLD DAYS
 ```html
-    <ul>
-     <li><a href="#search">Search</a></li>
-     <li><a href="#image">Image</a></li>
-     <li class="last"><a href="#maps">Maps</a></li>
-    </ul>
+<ul>
+  <li><a href="#search">Search</a></li>
+  <li><a href="#image">Image</a></li>
+  <li class="last"><a href="#maps">Maps</a></li>
+</ul>
 ```
 ```css
-    li {
-     border-bottom: 1px solid #aaa;
-    }
-    .last {
-     border-bottom: 0;
-    }
+li {
+  border-bottom: 1px solid #aaa;
+}
+.last {
+  border-bottom: 0;
+}
 ```
 
 ##### NEW DAYS
 ```html
-    <ul>
-     <li><a href="#search">Search</a></li>
-     <li><a href="#image">Image</a></li>
-     <li><a href="#maps">Maps</a></li>
-    </ul>
+<ul>
+  <li><a href="#search">Search</a></li>
+  <li><a href="#image">Image</a></li>
+  <li><a href="#maps">Maps</a></li>
+</ul>
 ```
 ```css
-    li {
-     border-bottom: 1px solid #aaa;
-    }
-    li:last-child {
-     border-bottom: 0;
-    }
+li {
+  border-bottom: 1px solid #aaa;
+}
+li:last-child {
+  border-bottom: 0;
+}
 ```
 
 ##### Challenge
@@ -514,23 +518,23 @@ Create abstractions about the document tree beyond those specified by the docume
 
 ##### OLD DAYS
 ```html
-    <article>
-     <p>Coffee? Hah! Our cocoa is far better.</p>
-     <p>Visit from 4-5 for cocoa happy hour!&#x2744;</p>
-    </article>
+<article>
+  <p>Coffee? Hah! Our cocoa is far better.</p>
+  <p>Visit from 4-5 for cocoa happy hour!&#x2744;</p>
+</article>
 ```
 
 ##### NEW DAYS
 ```html
-    <article>
-     <p>Coffee? Hah! Our cocoa is far better.</p>
-     <p>Visit from 4-5 for cocoa happy hour!</p>
-    </article>
+<article>
+  <p>Coffee? Hah! Our cocoa is far better.</p>
+  <p>Visit from 4-5 for cocoa happy hour!</p>
+</article>
 ```
 ```css
-    article p:last-child:after {
-     content: '\2744';
-    }
+article p:last-child:after {
+  content: '\2744';
+}
 ```
 
 ##### Challenge
