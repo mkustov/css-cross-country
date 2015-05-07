@@ -270,6 +270,7 @@ Refactor the spacing between `<header>`, `<article>`, and `<aside>` so that elem
 
 #### Non-Collapsing
 Collapsing margins will not occur when one or more block element has:
+
 1. Padding or border
 2. Relative or absolute positioning
 3. Float left or right
