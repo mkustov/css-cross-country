@@ -90,7 +90,7 @@ img {
 Rather than using `<div class="clear"></div>` to clear floats, refactor this page to use the clearfix method via .group.
 
 #### Nested Selectors
-By default nested elements automatically inherit parent styles, but sometimes we expect a different behavior from nested elements. On those cases is very important to know the **specificity rule**(the priority of selectors). Think of specificity as four digits number, where the lowest values are in the amount of elements selectors (a, p, img, div, etc); and the highest values are in the inline selectors. ex.:
+By default nested elements automatically inherit parent styles, but sometimes we expect a different behavior from nested elements. On those cases is very important to know the **specificity rule**(the priority of selectors). Think o specificity as four digits number, where the lowest values are in the amount of elements selectors (a, p, img, div, etc); and the highest values are in the inline selectors. ex.:
 
 ######0,0,0,1
 ```css
@@ -270,8 +270,9 @@ Refactor the spacing between `<header>`, `<article>`, and `<aside>` so that elem
 
 #### Non-Collapsing
 Collapsing margins will not occur when one or more block element has:
-1.Padding or border;
-2.Relative or absolute positioning, float left or right;
+1. Padding or border
+2. Relative or absolute positioning
+3. Float left or right
 
 ##### Challenge
 Add a `20px` bottom margin to `<header>`, `<article>`, and `<aside>` using the shorthand syntax. Remove any top margins and keep in mind that with `top` and `bottom` padding, the margins will no longer collapse.
