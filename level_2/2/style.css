@@ -1,66 +1,81 @@
 section {
-    border: 2px dashed #ccc;
-    padding: 15px 15px 0;
-    width: 260px;
+  border: 2px dashed #ccc;
+  padding: 15px 15px 0;
+  width: 260px;
 }
+
 nav {
-    background: #e0e2e6;
-    font-size: 12px;
-    margin: 0 0 10px;
-    padding: 5px 15px;
+  background: #e0e2e6;
+  font-size: 12px;
+  margin: 0 0 10px;
+  padding: 5px 15px;
 }
+
 nav li {
-    float: left;
-    display: inline;
-    margin: 0 10px 0 0;
+  float: left;
+  display: inline;
+  margin: 0 10px 0 0;
 }
+
 nav li a {
-    font-weight: bold;
+  font-weight: bold;
 }
+
 aside {
-    float: right;
-    width: 120px;
+  float: right;
+  width: 120px;
 }
+
 aside p {
-    font-size: 10px;
-    margin: 0;
-    font-style: italic;
+  font-size: 10px;
+  margin: 0;
+  font-style: italic;
 }
+
 article {
-    float: left;
-    width: 120px;
+  float: left;
+  width: 120px;
 }
+
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
+
 a {
-    color: #a1805c;
-    text-decoration: none;
+  color: #a1805c;
+  text-decoration: none;
 }
+
 p {
-    font-size: 14px;
-    line-height: 19px;
-    margin: 0 0 15px;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 0 0 15px;
 }
+
 p {
   font-style: normal;
 }
+
 h3 {
-    color: #848990;
-    font: bold 16px/20px Tahoma, Arial, sans-serif;
-    margin: 0 0 15px;
+  color: #848990;
+  font: bold 16px/20px Tahoma, Arial, sans-serif;
+  margin: 0 0 15px;
 }
+
 .clear {
-    clear: both;
+  clear: both;
 }
+
 /* clearfix */
- .group:before, .group:after {
-    content:"";
-    display: table;
+.group:before, .group:after {
+  content:"";
+  display: table;
 }
+
 .group:after {
-    clear: both;
+  clear: both;
 }
+
 .group {
-    zoom: 1;
+  zoom: 1;
 }
