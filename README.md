@@ -28,6 +28,7 @@ Now let's make the `<article>` a column width the same width as the `<aside>` co
 
 #### Clearfix
 Sometimes clearing is necessary. Floated items can be taller than non-floated content or even All children are floating. For all this cases we can apply 3 ways of clearing. They are:
+
 1.Clear with a subsequent element: Requires sequence to stay intact - breaks if things move; Background / border do not extend. 
 
 ```html
@@ -89,7 +90,7 @@ img {
 Rather than using `<div class="clear"></div>` to clear floats, refactor this page to use the clearfix method via .group.
 
 #### Nested Selectors
-By default nested elements automatically inherit parent styles, but sometimes we expect a different behavior from nested elements. On those cases is very important to know the **specificity rule**(the priority of selectors). Think os specificity as four digits number, where the lowest values are in the amount of elements selectors (a, p, img, div, etc); and the highest values are in the inline selectors. ex.:
+By default nested elements automatically inherit parent styles, but sometimes we expect a different behavior from nested elements. On those cases is very important to know the **specificity rule**(the priority of selectors). Think of specificity as four digits number, where the lowest values are in the amount of elements selectors (a, p, img, div, etc); and the highest values are in the inline selectors. ex.:
 
 ######0,0,0,1
 ```css
