@@ -32,6 +32,10 @@ aside p {
   font-style: italic;
 }
 
+aside p a {
+  font-style: normal;
+}
+
 article {
   float: left;
   width: 120px;
@@ -78,4 +82,28 @@ h3 {
 
 .group {
   zoom: 1;
+}
+
+#home a {
+  color: #c09e79;
+}
+
+#home article .button {
+  color: #fff;
+}
+
+.button:hover, .button:focus {
+  background: #6da3b2;
+}
+
+.button, .more {
+  background: #7ab2c1;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 15px;
+  padding: 5px 10px;
+  text-align: center;
 }

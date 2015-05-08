@@ -1,2 +1,2 @@
-#### Specificity
-Refactor the CSS declarations for `.active a` and `.copyright` so that the `!important` rule can be removed.
+ #### Inherited Styles
+For `anchor` tags within `aside paragraphs`, override the inherited `italics` with a `normal` font-style.
