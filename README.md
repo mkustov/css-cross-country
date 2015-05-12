@@ -367,7 +367,6 @@ Sometimes we need to present images among our content. Probably they will be ide
 }
 ```
 
-
 ##### Challenge
 Images are currently being non-proportionally resized via CSS. Apply the `height` and `width` to their parent list items instead, and hide any `overflow`.
 
