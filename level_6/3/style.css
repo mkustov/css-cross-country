@@ -29,8 +29,7 @@ ul.store li img {
   display: block;
 }
 
-.store li {
+.store li img {
   height: 150px;
   width: 150px;
-  overflow: hidden;
 }
