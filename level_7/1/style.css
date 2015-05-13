@@ -15,7 +15,6 @@ h1 {
   display: block;
   height: 75px;
   width: 250px;
-  text-indent: -9999px;
 }
 
 .logo {
@@ -32,3 +31,4 @@ h2 {
   font: italic 18px/24px Georgia, serif;
   text-align: center;
 }
+

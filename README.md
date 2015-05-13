@@ -404,8 +404,8 @@ The new store images are portrait rather than landscape orientation. Swap the `<
 
 #### Image Replacement
 Sometimes we need to replace by images some elements like logos, that normally come in replace to `a` elements. On those cases we have to proceed with some steps. 
-1. Add descriptive text to image-replaced elements;
-2. Add text-indent to hides the placeholder text;
+1. Add descriptive text to image-replaced elements
+2. Add text-indent to hides the placeholder text
 
 ```html
   <a href="#" class="logo">Sven's Snowshoe Emporium</a>
