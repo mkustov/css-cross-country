@@ -1,0 +1,2 @@
+#### Portrait Image Crop
+The new store images are portrait rather than landscape orientation. Swap the `<img>` `width` and `height` to better handle this type of proportion.
