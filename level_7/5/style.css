@@ -33,11 +33,6 @@ a:hover, a:focus {
   line-height: 40px;
 }
 
-.sidebar li {
-  display: block;
-  margin: 0 0 10px;
-}
-
 .sidebar li a {
   font-size: 14px;
   font-weight: normal;
@@ -50,12 +45,4 @@ a:hover, a:focus {
 
 .sidebar .sales {
   background-position: 0 -80px;
-}
-
-.sidebar .featured:hover, .sidebar .featured:focus {
-  background-position: 0 -40px;
-}
-
-.sidebar .sales:hover, .sidebar .sales:focus {
-  background-position: 0 -120px;
 }
