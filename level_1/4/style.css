@@ -1,11 +1,11 @@
+header {
+  background: #e0e2e6 !important;
+}
+
 body {
   color: #4b4648;
   font-family: tahoma, arial, sans-serif;
   font-size: 14px;
-}
-
-header {
-  background: #e0e2e6;
 }
 
 h1 {

@@ -7,15 +7,8 @@ section {
 }
 
 aside {
-  width: 120px;
-}
-
-aside {
   font-style: italic;
   width: 120px;
-  float: right;
-  margin-bottom: 10px;
-  margin-left: 10px;
 }
 
 p {
@@ -38,9 +31,4 @@ h3 {
   color: #848990;
   font: bold 16px/20px Tahoma, Arial, sans-serif;
   margin: 0 0 15px;
-}
-
-article {
-  width: 120px;
-  float: left;
 }

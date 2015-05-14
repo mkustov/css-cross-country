@@ -1,13 +1,10 @@
 body {
   color: #706c6e;
   font-family: Tahoma, Arial, sans-serif;
-}
-
-body {
   line-height: 1;
 }
 
-header, article {
+header {
   margin: 0 0 20px 0;
 }
 
@@ -27,6 +24,10 @@ h2 {
   color: #999;
   font: italic 18px/24px Georgia, serif;
   text-align: center;
+}
+
+article {
+  margin: 0 0 20px 0;
 }
 
 article h1 {

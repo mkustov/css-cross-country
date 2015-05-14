@@ -1,0 +1,1 @@
+Refactor the spacing between `<header>`, `<article>`, and `<aside>` so that elements will have a `20px` margin above and below, regardless of their order on the page. Account for collapsing margins and use shorthand syntax.

@@ -84,11 +84,11 @@ h3 {
   zoom: 1;
 }
 
-.home a {
+#home a {
   color: #c09e79;
 }
 
-article .button {
+#home article .button {
   color: #fff;
 }
 

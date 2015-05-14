@@ -29,8 +29,7 @@ Now let's make the `<article>` a column width the same width as the `<aside>` co
 #### Clearfix
 Sometimes clearing is necessary. Floated items can be taller than non-floated content or even All children are floating. For all this cases we can apply 3 ways of clearing. They are:
 
-1.Clear with a subsequent element: Requires sequence to stay intact - breaks if things move; Background / border do not extend. 
-
+1. Clear with a subsequent element: Requires sequence to stay intact - breaks if things move; Background / border do not extend.
 ```html
 <div>
   <img src="ski.jpg" alt="Skiing!" />
@@ -49,8 +48,7 @@ img {
 }
 ```
 
-2.Manual clearing: Requires an empty element; Might not be necessary later. 
-
+2. Manual clearing: Requires an empty element; Might not be necessary later.
 ```html
 <div>
   <img src="ski.jpg" alt="Skiing!" />
@@ -58,14 +56,13 @@ img {
   <div class="clear"></div>
 </div>
 ```
-
 ```css
 .clear {
   clear: both;
 }
 ```
 
-3.The clearfix. 
+3. The clearfix.
 
 ```html    
 <div class="group">
@@ -370,7 +367,6 @@ Sometimes we need to present images among our content. Probably they will be ide
 }
 ```
 
-
 ##### Challenge
 Images are currently being non-proportionally resized via CSS. Apply the `height` and `width` to their parent list items instead, and hide any `overflow`.
 
@@ -408,8 +404,8 @@ The new store images are portrait rather than landscape orientation. Swap the `<
 
 #### Image Replacement
 Sometimes we need to replace by images some elements like logos, that normally come in replace to `a` elements. On those cases we have to proceed with some steps. 
-1. Add descriptive text to image-replaced elements;
-2. Add text-indent to hides the placeholder text;
+1. Add descriptive text to image-replaced elements
+2. Add text-indent to hides the placeholder text
 
 ```html
   <a href="#" class="logo">Sven's Snowshoe Emporium</a>
