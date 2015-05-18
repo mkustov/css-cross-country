@@ -13,4 +13,4 @@ ex.: 100px content width + 15px padding width + 10px border width = 125px box wi
 }
 ```
 ##### Challenge
-The `<figure>` in our page footer should have a total box `width` of `180px`. Add an appropriate content `width` given its base `padding` and `border`.
+  The `<figure>` in our page footer should have a total box `width` of `120px`. Add an appropriate content `width` given its base `padding` and `border`.
